@@ -1,0 +1,6 @@
+ignore
+```
+.gitignore
+*.exe
+tempCodeRunnerFile.*
+```
