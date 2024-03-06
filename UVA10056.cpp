@@ -2,8 +2,7 @@
 using namespace std;
 int main()
 {
-    int total;
-    int player_num, winner;
+    int player_num, winner,total;
     float probability, answer;
     cin >> total;
     for (int i = 0; i < total; i++)
