@@ -2,9 +2,9 @@
 using namespace std;
 int main()
 {
-    cout << 777;
+    // cout << 777;
     int total, row, col, lines, answer, num1, num2;
-    string array[21];
+    string array[30];
     bool flag;
     cin >> total;
     for (int time = 0; time < total; time++)
@@ -20,7 +20,7 @@ int main()
             answer = 1;
             flag = true;
             cin >> num1 >> num2;
-            cout << array[num1][num2] << endl;
+            // cout << array[num1][num2] << endl;
             while (num1 - answer >= 0 && num2 - answer >= 0 && num1 + answer < row && num2 + answer < col && flag)
             {
                 for (int i = 0; i < 2 * answer + 1; i++)
@@ -36,21 +36,25 @@ int main()
                         break;
                     }
                 }
-                for (int i = 1; i < 2 * answer && flag; i++)
+                for (int i = 0; i < 2 * answer + 1 && flag; i++)
                 {
-                    if (array[num1][num2] != array[num1 - answer + 1 + i][num2 - answer])
+                    if (array[num1][num2] != array[num1 - answer + i][num2 - answer])
                     {
                         flag = false;
                         break;
                     }
-                    if (array[num1][num2] != array[num1 - answer + 1 + i][num2 + answer])
+                    if (array[num1][num2] != array[num1 - answer + i][num2 + answer])
                     {
                         flag = false;
                         break;
                     }
                 }
-                answer++;
+                if (flag)
+                {
+                    answer++;
+                }
             }
+            answer--;
             cout << answer * 2 + 1 << endl;
             //     // cout << answer * 2 + 1 << " " << array[num1][num2] << endl;
             //     // for (int i = num1, ii = num2; i > 0 && ii > 0 && i < row && ii < col; i--, ii--)
